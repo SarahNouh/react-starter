@@ -1,5 +1,33 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project is created to include the following: [ReactJS](https://reactjs.org/),[TypeScript](https://www.typescriptlang.org/), [Axios](https://github.com/axios/axios), [Ant Design](https://ant.design/docs/react/introduce), [PostCSS](https://postcss.org/).
+
+[Create-react-app-rewired](https://github.com/timarney/react-app-rewired) was used to override the configuration built into Create React App to be able to use postcss plugins and ant-design without the need to eject.
+
+### Some Code Conventions:
+  1. All imports should be sorted alphabetically
+  2. Src is split into several folders:
+     - **Components**: 
+       - This folder should contain all Components
+       - we can define *components* as reusable and independent UI pieces.
+       - Each component should have it's folder that contains the component's tsx file, css file and test file if any.
+     - **Pages**:
+       - This folder should contain all Pages for this web application, both static and dynamic.
+       - we can define *Pages* as the entire view a user will see.
+       - A page would essentially consist of a set of components.
+       - Each page should have it's own folder; having the same page-component name. That folder should contain the page's tsx file, css file and test file if any.
+     - **Services**:
+       - This folder should contains all Services that will allow us to fetch, transform, and store data.
+     - **Interfaces**:
+       - This folder should contain all the interfaces used within our application
+     - **Assets**:
+       - This folder should contain all the assets needed in our application
+  3. **Naming Conventions**: 
+     - *Components* and *pages* names should be written in **PascalCase**
+     - *Files* and *Folders* names should be written in **kebab-case**
+  4. All files should have *headers* that contain author and file information
+  5. All components/pages should be well commented
+     
 ## Available Scripts
 
 In the project directory, you can run:
@@ -27,18 +55,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
