@@ -2,19 +2,20 @@
  * @Author: sarah
  * @Date:   2019-07-31T16:12:38+02:00
  * @Last modified by:   sarah
- * @Last modified time: 2019-07-31T17:48:38+02:00
+ * @Last modified time: 2019-08-04T13:24:15+02:00
  */
+import { Link } from "react-router-dom";
 import React from "react";
-import userService from "../../services/UserServices/userService";
+import { User } from "../../interfaces/interface-user";
+import userService from "../../services/userServices/userService";
 
-interface user {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: any;
-}
-class HomePage extends React.Component<{}, { users: user[] }> {
+/**
+ *This component represents the demo homepage that contains examples of using the services
+ */
+class HomePage extends React.Component<{}, { users: User[] }> {
+  /**
+   * An instance of the user service
+   */
   userService: userService;
   constructor(props: {}) {
     super(props);
@@ -24,7 +25,11 @@ class HomePage extends React.Component<{}, { users: user[] }> {
 
     this.userService = new userService();
   }
-
+  /**
+   * A function called on component mouting
+   *
+   * @public
+   */
   componentDidMount() {
     this.userService.getAllUsers().then(response => {
       this.setState({
@@ -32,12 +37,15 @@ class HomePage extends React.Component<{}, { users: user[] }> {
       });
     });
   }
-
+  /**
+   * A function called to render the list of all avaiable users
+   * @public
+   */
   renderUsers() {
     return this.state.users.map((user, key) => {
       return (
         <li key={key}>
-          <h4>{user.name}</h4>
+          <Link to={`users/${user.id}`}>{user.name}</Link>
         </li>
       );
     });
